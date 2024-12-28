@@ -11,7 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -44,12 +43,8 @@ CREATE TABLE `certificates` (
 --
 
 INSERT INTO `certificates` (`id`, `certificate_no`, `student_name`, `issue_date`, `expire_date`, `qualification`, `accredited_by`, `created_at`, `updated_at`) VALUES
-(2, '3433/43454657', 'YOgi Babbo', '2023-06-01', '2023-08-25', 'QMS 9001', 'Nebosh', '2023-07-14 03:05:05', '2023-07-14 03:05:05'),
-(5, '4567/67676767', 'Ajmal Singh', '2023-06-15', '2023-08-17', 'QMS 9001', 'Nebosh 1', '2023-07-14 03:40:47', '2023-07-14 03:40:47'),
-(6, '7354/62656957', 'Raja Singham', '2023-06-01', '2023-08-24', 'QMS 9001', 'Nebosh', '2023-07-17 02:28:14', '2023-07-17 02:28:14'),
-(7, '0093/65835422', 'Jordan Baabu', '2023-06-01', '2023-09-21', 'QMS 9001', 'Nebosh', '2023-07-17 02:30:51', '2023-07-17 02:30:51'),
-(8, '4588/34323465', 'Andrew Kumar', '2023-06-01', '2023-09-21', 'QMS 9001', 'Nebosh', '2023-07-17 02:31:47', '2023-07-17 02:31:47'),
-(10, '3246/45623875', 'Johggs Asdoi', '2023-05-30', '2023-11-23', 'QMS 9001', 'Nebosh', '2023-07-17 02:34:17', '2023-07-17 02:38:23');
+(1, '0001/TEST001', 'John Doe', '2023-01-01', '2023-12-31', 'Dummy Qualification', 'Dummy Accreditor', '2023-01-01 00:00:00', '2023-01-01 00:00:00'),
+(2, '0002/TEST002', 'Jane Doe', '2023-02-01', '2023-12-31', 'Dummy Qualification', 'Dummy Accreditor', '2023-02-01 00:00:00', '2023-02-01 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -141,94 +136,9 @@ CREATE TABLE `users` (
   `api_token` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`, `api_token`) VALUES
-(1, 'Admin', 'admin@example.com', NULL, '$2y$10$pknWTxAqedG.jQ0e92Ste.O1p6xREmvIdoVoxtRPefhBokGOqR8Pa', NULL, '2023-07-14 02:05:37', '2023-07-18 05:04:26', 'admin', 'I6Lbrbezkczo6Y8euL91PweVvc9Rt1Jbr8qF1BR51iBCXLVZwlGhTQEfoOO7'),
-(2, 'Editor', 'editor@example.com', NULL, '$2y$10$qZ0BeF/zLdbLUv3MLomNau3nh8YK.ktKbSWvbMv4HpDWPrDVuokoC', NULL, '2023-07-14 02:05:37', '2023-07-18 05:04:26', 'editor', '8f3e1qp5V00CfJEGVhQoqc9cScWo0ssqEXa3FgjIdR85OQYGMfcgLTwd0Fqt'),
-(3, 'Api', 'api@bstgt.com', NULL, 'AP2020@#', NULL, NULL, '2023-07-18 05:04:26', 'api', 'eccDqTtZW6Mi0rqw0Md6DiPYjkcZbTJrHopZg6s8jFdiBLWcrNkIrBCWs43N');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `certificates`
---
-ALTER TABLE `certificates`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `password_reset_tokens`
---
-ALTER TABLE `password_reset_tokens`
-  ADD PRIMARY KEY (`email`);
-
---
--- Indexes for table `personal_access_tokens`
---
-ALTER TABLE `personal_access_tokens`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `certificates`
---
-ALTER TABLE `certificates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `personal_access_tokens`
---
-ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
