@@ -1,30 +1,40 @@
-# CertVeri - Certificate Verification System
+# CertVeri - QR Code-Based Attribute Management System
 
-CertVeri is a robust certificate verification system built with Laravel, designed to manage and verify educational certificates securely and efficiently.
+CertVeri is a versatile QR code-based attribute management system built with Laravel. It is designed to securely generate and verify data attributes that can be embedded in certificates, products, and other use cases. Originally developed for certificate verification, it now extends to a wide range of scenarios requiring attribute validation and data sharing through QR codes.
 
 ## Features
 
-- **Certificate Management**
-  - Create and manage digital certificates
-  - Unique certificate numbering system
-  - QR code generation for each certificate
-  - Certificate validity period tracking
+- **Attribute Management**
+  - Create and manage digital records with customizable attributes
+  - Unique numbering system for each record
+  - QR code generation for each record
+  - Attribute validity period tracking
+
+- **Flexible Use Cases**
+  - Certificates for education, training, and compliance
+  - Product authenticity and warranty tracking
+  - Event tickets and passes
+  - Asset and inventory tracking
+  - Membership and ID cards
+  - Document verification and traceability
+  - Marketing campaigns and promotions
+  - Supply chain management with traceable data
 
 - **User Roles**
   - Admin dashboard for system management
-  - Editor access for certificate creation
+  - Editor access for record creation
   - Role-based access control
 
 - **Data Management**
   - Excel/CSV import/export functionality
-  - Bulk certificate operations
+  - Bulk operations for records
   - Advanced search and filtering
 
 - **Security**
   - JWT authentication for API access
   - Role-based middleware protection
   - CSRF protection
-  - Secure certificate verification
+  - Secure QR code-based verification
 
 ## Prerequisites
 
@@ -79,33 +89,44 @@ CertVeri is a robust certificate verification system built with Laravel, designe
 
 ## Usage
 
-### Certificate Management
+### Attribute Management
 
-- **Creating Certificates**
-  - Access the certificate creation form
-  - Fill in required details (certificate number, student name, dates, etc.)
-  - System automatically generates QR code
+- **Creating Records**
+  - Access the record creation form
+  - Fill in required details (e.g., name, dates, qualifications, etc.)
+  - System automatically generates a QR code
 
 - **Verification**
   - Use QR code scanning
-  - Manual certificate number verification
+  - Manual attribute number verification
   - API-based verification for third-party systems
 
 ### API Integration
 
-The system provides a RESTful API for certificate verification:
+The system provides a RESTful API for data verification:
 
 ```bash
-GET /api/verify/{certificate_number}
+GET /api/verify/{record_number}
 ```
 
 API authentication is required using JWT tokens.
+
+## System Documentation
+
+Detailed system flows and diagrams can be found in the [docs/system-flows.md](docs/system-flows.md) file. These include:
+
+1. Authentication Flow
+2. Record Creation Flow
+3. QR Code Verification Flow
+4. Role-Based Access Control
+5. Record Management Flow
+6. Data Export Flow
 
 ## Security Considerations
 
 - All API endpoints are protected with JWT authentication
 - Role-based access control for different user types
-- Input validation for certificate creation
+- Input validation for record creation
 - Rate limiting on API endpoints
 
 ## Contributing
@@ -123,3 +144,4 @@ This project is proprietary software - see the [LICENSE.md](LICENSE.md) file for
 ## Support
 
 For support and queries, please create an issue in the repository or contact the development team.
+
